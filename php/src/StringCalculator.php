@@ -47,6 +47,6 @@ final class StringCalculator
 
     private function validNumbersToSum(array $explodedNumbers): array
     {
-        return array_filter($explodedNumbers, fn(int $i) => $i < 1000);
+        return array_filter($explodedNumbers, fn(string $i) => (int)$i < 1000);
     }
 }
