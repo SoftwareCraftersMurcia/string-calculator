@@ -23,10 +23,18 @@ final class StringCalculatorTest extends TestCase
     }
 
     /** @test */
-    public function add_single_number_equal_same_number(): void
+    public function add_single_number(): void
     {
         $result = $this->stringCalculator->add('4');
 
         self::assertSame(4, $result);
+    }
+
+    /** @test */
+    public function add_multiple_numbers_split_by_commas(): void
+    {
+        $result = $this->stringCalculator->add('1,2');
+
+        self::assertSame(3, $result);
     }
 }
