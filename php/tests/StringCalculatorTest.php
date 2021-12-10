@@ -37,4 +37,12 @@ final class StringCalculatorTest extends TestCase
 
         self::assertSame(3, $result);
     }
+
+    /** @test */
+    public function add_arbitrary_multiple_numbers_split_by_commas(): void
+    {
+        $result = $this->stringCalculator->add('1,2,3,4,5,6,7,8,9');
+
+        self::assertSame(45, $result);
+    }
 }
