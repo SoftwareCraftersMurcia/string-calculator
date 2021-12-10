@@ -60,4 +60,12 @@ final class StringCalculatorTest extends TestCase
         $this->expectExceptionMessage("Negatives not allowed: -2 -3");
         $this->stringCalculator->add('1,-2,-3');
     }
+
+    /** @test */
+    public function add_support_custom_separator(): void
+    {
+        $result = $this->stringCalculator->add("//;\n1;2");
+
+        self::assertSame(3, $result);
+    }
 }
