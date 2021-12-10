@@ -1,7 +1,8 @@
+const LEFT_CUSTOM_DELIMITER = "//";
 const add = (input) => {
   if (input === "") return 0;
   const separators = [",", "\n"];
-  if (input.startsWith("//")) {
+  if (input.startsWith(LEFT_CUSTOM_DELIMITER)) {
     separators.push(input[2]);
     input = input.substring(4, input.length);
   }
