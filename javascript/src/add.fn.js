@@ -1,7 +1,7 @@
 const add = (input) => {
   if (input === "") return 0;
   return input
-    .split(",")
+    .split(/[,\n]/)
     .map((number) => parseInt(number))
     .reduce((acc, curr) => acc + curr, 0);
 };

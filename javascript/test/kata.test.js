@@ -20,4 +20,14 @@ describe("Add function tests", () => {
     const result = add("1,2,3");
     expect(result).toBe(6);
   });
+
+  it("should return the sum of two numbers with new line separator", () => {
+    const result = add("1\n2");
+    expect(result).toBe(3);
+  });
+
+  it("should return the sum of two or more numbers with new line separator and the default separator", () => {
+    const result = add("1\n2,3");
+    expect(result).toBe(6);
+  });
 });
