@@ -53,4 +53,11 @@ final class StringCalculatorTest extends TestCase
 
         self::assertSame(6, $result);
     }
+
+    /** @test */
+    public function add_negative_throws_exception(): void
+    {
+        $this->expectExceptionMessage("Negatives not allowed: -2 -3");
+        $this->stringCalculator->add('1,-2,-3');
+    }
 }

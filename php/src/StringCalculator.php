@@ -2,12 +2,23 @@
 
 namespace Kata;
 
+use Exception;
+
 final class StringCalculator
 {
+    /**
+     * @throws Exception
+     */
     public function add(string $numbers): int
     {
         $normalizedNumbers = str_replace("\n", ',', $numbers);
         $explodedNumbers = explode(',', $normalizedNumbers);
+
+        $negativeNumbers = array_filter($explodedNumbers, fn(string $number) => (int) $number < 0);
+
+        if (!empty($negativeNumbers)) {
+            throw new Exception(sprintf('Negatives not allowed: %s', implode(' ', $negativeNumbers)));
+        }
 
         return array_sum($explodedNumbers);
     }
