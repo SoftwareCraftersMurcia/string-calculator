@@ -5,4 +5,9 @@ describe("Add function tests", function () {
     var result = add("");
     expect(result).toBe(0);
   });
+
+  it("should return a number when a single number string is given", function () {
+    var result = add("1");
+    expect(result).toBe(1);
+  });
 });
