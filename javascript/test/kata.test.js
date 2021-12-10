@@ -1,8 +1,8 @@
-const { renameMe } = require('../src/kata');
+const { add } = require("../src/add.fn");
 
-describe("Kata", function () {
-  it("change_this_name", function () {
-   var result = renameMe();
-      expect(result).toBe(true);
+describe("Add function tests", function () {
+  it("should return zero when input is empty", function () {
+    var result = add("");
+    expect(result).toBe(0);
   });
 });
