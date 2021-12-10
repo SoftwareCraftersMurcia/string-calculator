@@ -1,4 +1,5 @@
-<?php declare(strict_types=1);
+<?php
+declare(strict_types=1);
 
 namespace Kata;
 
@@ -17,7 +18,7 @@ final class StringCalculator
         $negativeNumbers = array_filter($explodedNumbers, fn(string $number) => (int) $number < 0);
 
         if (!empty($negativeNumbers)) {
-            throw new Exception(sprintf('Negatives not allowed: %s', implode(' ', $negativeNumbers)));
+            throw NumbersNotAllowedException::withNegativeNumbers($negativeNumbers);
         }
 
         return array_sum($explodedNumbers);
