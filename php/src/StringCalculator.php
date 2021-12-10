@@ -19,7 +19,9 @@ final class StringCalculator
 
         $this->validateOnlyPositiveNumbers($explodedNumbers);
 
-        return array_sum($explodedNumbers);
+        $numbersToSum = $this->validNumbersToSum($explodedNumbers);
+
+        return array_sum($numbersToSum);
     }
 
     private function validateOnlyPositiveNumbers(array $explodedNumbers): void
@@ -41,5 +43,10 @@ final class StringCalculator
         }
 
         return ',';
+    }
+
+    private function validNumbersToSum(array $explodedNumbers): array
+    {
+        return array_filter($explodedNumbers, fn(int $i) => $i < 1000);
     }
 }

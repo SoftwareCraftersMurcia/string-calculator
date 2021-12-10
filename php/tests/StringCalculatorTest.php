@@ -68,4 +68,12 @@ final class StringCalculatorTest extends TestCase
 
         self::assertSame(3, $result);
     }
+
+    /** @test */
+    public function add_ignores_bigger_than_1000(): void
+    {
+        $result = $this->stringCalculator->add("1001,2");
+
+        self::assertSame(2, $result);
+    }
 }
