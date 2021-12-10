@@ -31,7 +31,7 @@ describe("Add function tests", () => {
     expect(result).toBe(6);
   });
 
-  it.skip("should return the sum of numbers with custom separator", () => {
+  it("should return the sum of numbers with custom separator", () => {
     const result = add("//;\n1;2");
     expect(result).toBe(3);
   });

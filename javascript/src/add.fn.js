@@ -1,6 +1,10 @@
 const add = (input) => {
   if (input === "") return 0;
   const separators = [",", "\n"];
+  if (input.startsWith("//")) {
+    separators.push(input[2]);
+    input = input.substring(4, input.length);
+  }
   const regex = new RegExp(`[${separators.join("")}]`);
   return input
     .split(regex)
