@@ -13,11 +13,11 @@ final class StringCalculator
     public function add(string $numbers): int
     {
         $separator = ',';
-        if (str_starts_with($numbers, '//')) {
+        if (0 === strpos($numbers, '//')) {
             $separator = $numbers[2];
         }
 
-        $normalizedNumbers = str_replace(["\n", '//'], $separator, $numbers); // ;;;1;2
+        $normalizedNumbers = str_replace(["\n", '//'], $separator, $numbers);
         $explodedNumbers = explode($separator, $normalizedNumbers);
         $negativeNumbers = array_filter($explodedNumbers, fn(string $number) => (int) $number < 0);
 
