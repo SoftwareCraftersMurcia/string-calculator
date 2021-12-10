@@ -6,7 +6,8 @@ final class StringCalculator
 {
     public function add(string $numbers): int
     {
-        $explodedNumbers = explode(',', $numbers);
+        $normalizedNumbers = str_replace("\n", ',', $numbers);
+        $explodedNumbers = explode(',', $normalizedNumbers);
 
         return array_sum($explodedNumbers);
     }

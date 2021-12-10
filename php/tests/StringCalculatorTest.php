@@ -45,4 +45,12 @@ final class StringCalculatorTest extends TestCase
 
         self::assertSame(45, $result);
     }
+
+    /** @test */
+    public function add_multiple_numbers_split_by_newline_separator(): void
+    {
+        $result = $this->stringCalculator->add("1\n2,3");
+
+        self::assertSame(6, $result);
+    }
 }
