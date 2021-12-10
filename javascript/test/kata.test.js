@@ -30,4 +30,9 @@ describe("Add function tests", () => {
     const result = add("1\n2,3");
     expect(result).toBe(6);
   });
+
+  it.skip("should return the sum of numbers with custom separator", () => {
+    const result = add("//;\n1;2");
+    expect(result).toBe(3);
+  });
 });
